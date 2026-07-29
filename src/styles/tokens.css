@@ -1,0 +1,78 @@
+/* Design tokens — single source of truth.
+   DESIGN-SYSTEM.md §2 is authoritative. */
+
+:root {
+  /* Color */
+  --color-juniper: #283325;
+  --color-dust: #ebecf0;
+  --color-deep-teal: #225065;
+  --color-fox-clay: #9e6647;
+  --color-sandstone-shadow: #455953;
+  --color-agave: #90a9a0;
+  --color-mesa-clay: #944a3a;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-border: rgba(40, 51, 37, 0.12);
+  --color-overlay: rgba(40, 51, 37, 0.85);
+
+  /* Typography */
+  --font-logo: 'Mekona', serif;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', monospace;
+
+  --text-display-xl: clamp(3.75rem, 6vw, 4.5rem);
+  --text-display: clamp(3rem, 5vw, 3.75rem);
+  --text-h1: clamp(2.5rem, 4vw, 3rem);
+  --text-h2: clamp(2rem, 3vw, 2.5rem);
+  --text-h3: clamp(1.5rem, 2.4vw, 2rem);
+  --text-h4: 1.5rem;
+  --text-lead: 1.25rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.75rem;
+
+  /* Spacing — 8-point scale */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-80: 80px;
+  --space-96: 96px;
+  --space-120: 120px;
+  --space-160: 160px;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  /* Shadow */
+  --shadow-none: none;
+  --shadow-sm: 0 8px 30px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 16px 40px rgba(0, 0, 0, 0.06);
+
+  /* Motion — MOTION.md §2 authoritative; --duration-slow is 500ms */
+  --duration-instant: 100ms;
+  --duration-fast: 150ms;
+  --duration-standard: 250ms;
+  --duration-slow: 500ms;
+  --duration-atmospheric: 15s;
+
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-linear: linear;
+
+  /* Layout */
+  --container-default: 1200px;
+  --container-reading: 720px;
+  --container-wide: 1400px;
+
+  --section-space-desktop: var(--space-120);
+  --section-space-tablet: var(--space-96);
+  --section-space-mobile: var(--space-72);
+  --section-space-sm: var(--space-56);
+}
