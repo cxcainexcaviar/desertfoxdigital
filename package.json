@@ -1,0 +1,31 @@
+{
+  "name": "desertfoxdigital-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing website for Desert Fox Digital — boutique digital strategy agency",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "^15.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "lucide-react": "^0.460.0",
+    "resend": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.0.0"
+  }
+}
