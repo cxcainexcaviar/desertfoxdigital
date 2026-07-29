@@ -1,13 +1,78 @@
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 import './globals.css';
 
-/**
- * Fonts: add woff2 files under public/fonts/ then wire with next/font/local:
- *   Inter-Regular.woff2, Inter-SemiBold.woff2
- *   PlayfairDisplay-Regular.woff2, PlayfairDisplay-Medium.woff2
- *   GeistMono-Medium.woff2
- * Until then, system fallbacks from tokens.css apply.
- */
+const inter = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Inter-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Inter-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Inter-SemiBold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/Inter-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-body',
+  display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
+});
+
+const playfair = localFont({
+  src: [
+    {
+      path: '../../public/fonts/PlayfairDisplay-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/PlayfairDisplay-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-display',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+});
+
+const geistMono = localFont({
+  src: [
+    {
+      path: '../../public/fonts/GeistMono-Medium.woff2',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-mono',
+  display: 'swap',
+  fallback: ['monospace'],
+});
+
+const mekona = localFont({
+  src: [
+    {
+      path: '../../public/fonts/Mekona.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-logo',
+  display: 'swap',
+  fallback: ['Georgia', 'serif'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -32,7 +97,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${playfair.variable} ${geistMono.variable} ${mekona.variable}`}
+    >
       <body>
         <a href="#main-content" className="skip-to-content">
           Skip to content
