@@ -1,0 +1,89 @@
+/* Utilities — accessibility, focus, helpers.
+   IMPLEMENTATION-STANDARDS.md §8 */
+
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: var(--space-16);
+  z-index: 1000;
+  padding: var(--space-12) var(--space-16);
+  background: var(--color-deep-teal);
+  color: var(--color-dust);
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: top var(--duration-fast) var(--ease-standard);
+}
+
+.skip-to-content:focus {
+  top: var(--space-16);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-deep-teal);
+  outline-offset: 2px;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .haze {
+    animation: none;
+  }
+
+  .hero-entrance-headline,
+  .hero-entrance-paragraph,
+  .hero-entrance-cta,
+  .hero-entrance-bg {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
