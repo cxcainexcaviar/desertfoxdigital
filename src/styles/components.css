@@ -97,6 +97,41 @@
   transition: transform var(--duration-fast) var(--ease-standard);
 }
 
+.btn__spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: btn-spin 0.6s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dark surfaces — invert interactive text colors */
+.section[data-surface='2'] .btn--secondary,
+.section[data-surface='2'] .btn--icon-link,
+.section[data-surface='3'] .btn--secondary,
+.section[data-surface='3'] .btn--icon-link {
+  color: var(--color-dust);
+}
+
+.section[data-surface='2'] .btn--ghost,
+.section[data-surface='3'] .btn--ghost {
+  border-color: var(--color-dust);
+  color: var(--color-dust);
+}
+
+.section[data-surface='2'] .btn--ghost:hover:not(:disabled),
+.section[data-surface='3'] .btn--ghost:hover:not(:disabled) {
+  background-color: var(--color-dust);
+  color: var(--color-juniper);
+}
+
 .tag {
   display: inline-flex;
   align-items: center;
