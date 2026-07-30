@@ -162,3 +162,120 @@
   font-weight: 400;
   letter-spacing: 0.02em;
 }
+
+/* —— Site Nav —— */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 80px;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--duration-standard) var(--ease-standard),
+    border-color var(--duration-standard) var(--ease-standard),
+    backdrop-filter var(--duration-standard) var(--ease-standard);
+}
+
+.site-nav--scrolled {
+  background-color: color-mix(in srgb, var(--color-dust) 92%, transparent);
+  border-bottom-color: var(--color-border);
+  backdrop-filter: blur(12px);
+}
+
+.site-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  gap: var(--space-32);
+}
+
+.site-nav__logo {
+  flex-shrink: 0;
+  color: var(--color-juniper);
+}
+
+.site-nav--scrolled .site-nav__logo,
+.site-nav:not(.site-nav--scrolled) .site-nav__logo {
+  color: inherit;
+}
+
+/* Transparent over dark hero: light logo/links */
+body:has(.section[data-surface='2']:first-of-type) .site-nav:not(.site-nav--scrolled) {
+  color: var(--color-dust);
+}
+
+body:has(.section[data-surface='2']:first-of-type) .site-nav:not(.site-nav--scrolled) .site-nav__logo {
+  color: var(--color-dust);
+}
+
+body:has(.section[data-surface='2']:first-of-type) .site-nav:not(.site-nav--scrolled) .site-nav__link {
+  color: var(--color-dust);
+}
+
+.site-nav--scrolled {
+  color: var(--color-juniper);
+}
+
+.site-nav--scrolled .site-nav__logo {
+  color: var(--color-juniper);
+}
+
+.site-nav__links {
+  display: none;
+  align-items: center;
+  gap: var(--space-32);
+  list-style: none;
+}
+
+@media (min-width: 900px) {
+  .site-nav__links {
+    display: flex;
+  }
+}
+
+.site-nav__link {
+  position: relative;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--color-juniper);
+  padding-block: var(--space-8);
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.site-nav__link:hover::after,
+.site-nav__link.is-current::after {
+  transform: scaleX(1);
+}
+
+.site-nav__cta {
+  display: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 900px) {
+  .site-nav__cta {
+    display: block;
+  }
+}
+
+.site-nav__cta .btn {
+  height: 40px;
+  padding: 12px 20px;
+  font-size: var(--text-small);
+}
