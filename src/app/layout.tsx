@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import { SiteNav } from '@/components/navigation';
+import { SiteFooter } from '@/components/footer';
 import './globals.css';
 
 const inter = localFont({
@@ -108,6 +109,7 @@ export default function RootLayout({
         </a>
         <SiteNav />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );
