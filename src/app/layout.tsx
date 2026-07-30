@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import { SiteNav } from '@/components/navigation';
 import './globals.css';
 
 const inter = localFont({
@@ -105,6 +106,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-to-content">
           Skip to content
         </a>
+        <SiteNav />
         {children}
       </body>
     </html>
